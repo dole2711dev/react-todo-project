@@ -1,0 +1,22 @@
+button {
+	width: 150px;
+	padding: 10px 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+}
+
+button a {
+	color: #000;
+}
+.btn-primary {
+	background: #dfe6e9;
+}
+
+.btn-active {
+}
+
+.btn-special {
+}
