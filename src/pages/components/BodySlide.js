@@ -13,7 +13,7 @@ const BodySlide = () => {
 		accessibility: true,
 		pageDots: true,
 		wrapAround: true,
-		autoPlay: true,
+		autoPlay: 6000,
 	};
 	return (
 		<>
