@@ -1,10 +1,14 @@
 /* Navbar start */
+nav {
+	height: 100%;
+}
+
 .navbar {
 	position: fixed;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	background: rgb(221, 221, 221);
+	background: rgb(235, 235, 235);
 	top: 0;
 
 	height: 60px;
@@ -84,33 +88,85 @@
 
 .navbar .navbar-container .navbar-header .navbar-header-menu-item {
 	transition: all 0.1s ease-out;
-	list-style: none;
-	padding: 18px 20px;
-	cursor: pointer;
+	padding: 20px;
 	color: #000;
 	position: relative;
 	font-size: 1.2rem;
 	text-transform: capitalize;
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.navbar .navbar-container .navbar-header .navbar-header-menu-item::after {
+.navbar-header nav .navbar-header-menu .navbar-header-menu-item::before {
 	border-bottom: 3px solid rgb(255, 94, 0);
-	padding-bottom: 15px;
 	content: "";
 	display: block;
-	bottom: 0;
+	position: absolute;
 	transform: scaleX(0);
 	transition: transform 0.25s ease-in-out;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	width: 100%;
 }
 
-.navbar .navbar-container .navbar-header .navbar-header-menu-item:hover {
+.navbar-header nav .navbar-header-menu .navbar-header-menu-item:hover {
 	color: rgb(255, 94, 0);
 }
 
-.navbar .navbar-container .navbar-header .navbar-header-menu-item:hover::after {
-	transform: scaleX(1.5);
+.navbar-header nav .navbar-header-menu .navbar-header-menu-item:hover::before,
+.navbar-header
+	nav
+	.navbar-header-menu
+	.navbar-header-menu-item.is-activated::before {
+	transform: scaleX(1);
 }
+
+nav .navbar-header-menu-item .navbar-menu-child {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	transition: all 0.1s ease-out;
+	display: none;
+	left: 0;
+	background: rgb(235, 235, 235);
+	top: 100%;
+	padding: 0 1rem;
+	width: 200px;
+	text-align: center;
+}
+
+nav .navbar-header-menu-item:hover > .navbar-menu-child,
+nav .navbar-header-menu-item:focus-within > .navbar-menu-child,
+nav .navbar-header-menu-item .navbar-menu-child:hover {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+
+nav
+	.navbar-header-menu
+	.navbar-header-menu-item
+	.navbar-menu-child
+	.navbar-menu-child-item {
+	color: #000;
+	clear: both;
+	width: 100%;
+	margin: 20px 0;
+	font-size: 1rem;
+	word-wrap: break-word;
+	border-bottom: #000;
+}
+
+nav
+	.navbar-header-menu
+	.navbar-header-menu-item
+	.navbar-menu-child
+	.navbar-menu-child-item:hover {
+	color: rgb(255, 94, 0);
+}
+
 /* Navbar end */
 
 /* Body start */
@@ -283,9 +339,6 @@
 	font-size: 1.5rem;
 	margin: 0 3.5rem;
 	list-style: none;
-}
-
-.footer-menu .footer-menu-items .footer-menu-child {
 }
 
 .footer-menu .footer-menu-items .footer-menu-child .footer-menu-child-item {

@@ -1,21 +1,49 @@
 import React, { useState } from "react";
 import "./pages.css";
 import ListMenu from "./components/ListMenu";
+import { v4 as uuid } from "uuid";
 
 // Import Icons
-import { FaBattleNet } from "react-icons/fa";
+import { FaBattleNet, FaLessThanEqual } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 //FaDAndDk
+
 const Navbar = () => {
 	const [navbarFixed, setNavbarFixed] = useState(false);
-	const dataListMenu = {
-		nameParentClass: "navbar-header-menu",
-		nameChildrenClass: "navbar-header-menu-item",
-		datas: ["Home", "Solution", "Services", "Work", "About", "Contact"],
-	};
+	const [dataListMenu, setDataListMenu] = useState([
+		{
+			id: uuid(),
+			nameMenu: "Home",
+			activated: true,
+		},
+		{
+			id: uuid(),
+			nameMenu: "Solution",
+			activated: false,
+		},
+		{
+			id: uuid(),
+			nameMenu: "Services",
+			activated: false,
+		},
+		{
+			id: uuid(),
+			nameMenu: "Work",
+			activated: false,
+		},
+		{
+			id: uuid(),
+			nameMenu: "About",
+			activated: false,
+		},
+		{
+			id: uuid(),
+			nameMenu: "Contact",
+			activated: false,
+		},
+	]);
+
 	const dataChildrenMenu = {
-		nameMenuChildren: "footer-menu-child",
-		nameMenuItemChildren: "footer-menu-child-item",
 		Solution: [
 			"Mobile Application",
 			"Website & Microsite",
@@ -36,6 +64,7 @@ const Navbar = () => {
 		About: ["Our Clientele", "FAQs"],
 		Contact: ["General Contact", "Submit Your RFP", "Request for a Team"],
 	};
+
 	document.addEventListener("scroll", () => {
 		if (
 			document.body.scrollTop >= 80 ||
@@ -46,6 +75,13 @@ const Navbar = () => {
 			setNavbarFixed(false);
 		}
 	});
+
+	const handlerActivatedNavbar = (id) => {
+		setDataListMenu((dataListMenu) => ({
+			...dataListMenu,
+		}));
+	};
+
 	return (
 		<>
 			<div className={`navbar ${navbarFixed ? "navbar-fixed" : ""}`}>
@@ -56,6 +92,7 @@ const Navbar = () => {
 						<ListMenu
 							dataListMenu={dataListMenu}
 							dataChildrenMenu={dataChildrenMenu}
+							handlerActivatedNavbar={handlerActivatedNavbar}
 						/>
 						<div className="navbar-login">
 							<a href="#">
