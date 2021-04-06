@@ -11,8 +11,6 @@ const ListMenu = (props) => {
 	let nameMenuChildren = "navbar-menu-child";
 	let nameMenuItemChildren = "navbar-menu-child-item";
 
-	console.log(dataListMenu);
-
 	const handlerActivatedNavbar = (e) => {};
 
 	const CreateLiMenu = (id, data, nameClass, isActivated) => {
@@ -44,7 +42,6 @@ const ListMenu = (props) => {
 		);
 	};
 
-	console.log(dataListMenu);
 	return (
 		<>
 			<nav>

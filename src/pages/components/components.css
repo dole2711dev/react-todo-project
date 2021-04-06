@@ -1,22 +1,20 @@
-button {
-	width: 150px;
-	padding: 10px 20px;
-	border: 1px solid black;
-	border-radius: 5px;
+.btn-primary {
+	margin: 1rem 0;
+	padding: 1rem 2rem;
+	border: 0;
+	border-radius: 2rem;
 	outline: none;
-	cursor: pointer;
-	transition: all 0.1s ease-in-out;
+	background: #007248;
+	text-transform: uppercase;
+	color: #fff;
+	box-shadow: 0 0 5px #007248;
+	opacity: 0.85;
+	transition: opacity 0.2s ease;
 }
 
-button a {
-	color: #000;
-}
-.btn-primary {
-	background: #dfe6e9;
+.btn-primary:hover {
+	opacity: 1;
 }
 
 .btn-active {
-}
-
-.btn-special {
 }

@@ -2,19 +2,16 @@ import React from "react";
 import { FaAngleUp } from "react-icons/fa";
 
 const ButtonToTop = () => {
-	let divCircle = document.querySelector(".inner-circle");
-
 	window.onscroll = () => {
-		if (divCircle !== null) {
-			if (
-				document.body.scrollTop > 100 ||
-				document.documentElement.scrollTop > 100
-			) {
-				divCircle.classList.add("show");
-			} else {
-				if (divCircle.classList.contains("show")) {
-					divCircle.classList.remove("show");
-				}
+		let divCircle = document.querySelector(".inner-circle");
+		if (
+			document.body.scrollTop > 100 ||
+			document.documentElement.scrollTop > 100
+		) {
+			divCircle.classList.add("show");
+		} else {
+			if (divCircle.classList.contains("show")) {
+				divCircle.classList.remove("show");
 			}
 		}
 	};

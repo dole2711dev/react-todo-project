@@ -35,20 +35,15 @@ const BodySlide = () => {
 					<SlideImage id="3" />
 				</div>
 			</Flickity>
-			<div className="body-slide">
-				<div className="session-slide">
-					<h1>WEB DESIGN, MOBILE APP DEVELOPMENT AND MAINTENANCE</h1>
-					<p>
-						W2Solution is an international IT partner. We can start
-						from analyzing your actual business requirements for a
-						web solution or a multi-platforms solution, continue
-						with a great web design, web development, third-party
-						integration and mobile development. Since 2008, we have
-						provided effective design and development solutions for
-						our corporate and startup clients.
-					</p>
-				</div>
-			</div>
+			<h1>WEB DESIGN, MOBILE APP DEVELOPMENT AND MAINTENANCE</h1>
+			<p>
+				3FORCOM is an international IT partner. We can start from
+				analyzing your actual business requirements for a web solution
+				or a multi-platforms solution, continue with a great web design,
+				web development, third-party integration and mobile development.
+				Since 2008, we have provided effective design and development
+				solutions for our corporate and startup clients.
+			</p>
 		</>
 	);
 };
