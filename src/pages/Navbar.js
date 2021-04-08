@@ -4,9 +4,8 @@ import ListMenu from "./components/ListMenu";
 import { v4 as uuid } from "uuid";
 
 // Import Icons
-import { FaBattleNet, FaLessThanEqual } from "react-icons/fa";
+import { FaBattleNet } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-//FaDAndDk
 
 const Navbar = () => {
 	const [navbarFixed, setNavbarFixed] = useState(false);

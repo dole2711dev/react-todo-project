@@ -1,4 +1,5 @@
 import React from "react";
+import { render } from "react-dom";
 import BoxContainer from "./BoxContainer";
 import Image from "../../image/empty-image.jpg";
 
@@ -37,6 +38,29 @@ const ListBoxContainer = () => {
 			direction: "right",
 		},
 	];
+	let heightBox = [];
+	let boxContainerList = document.getElementsByClassName("box-container");
+	document.addEventListener("DOMContentLoaded", function () {
+		for (let index = 0; index < boxContainerList.length; index++) {
+			let scrollTop =
+				boxContainerList[index].offsetTop -
+				boxContainerList[index].scrollTop +
+				boxContainerList[index].clientTop;
+			heightBox.push(scrollTop + (scrollTop / 100) * 15);
+		}
+	});
+
+	console.log(heightBox);
+
+	let showIndex = 0;
+	document.addEventListener("scroll", function () {
+		var positionCurrent = window.screen.height + window.scrollY;
+
+		if (positionCurrent >= heightBox[showIndex]) {
+			boxContainerList[showIndex].classList.add("show");
+			showIndex++;
+		}
+	});
 
 	return (
 		<>

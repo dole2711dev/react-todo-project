@@ -18,6 +18,10 @@ const BodySlide = () => {
 		wrapAround: true,
 		autoPlay: 5000,
 	};
+	let styleTitle = {
+		margin: "2rem",
+	};
+
 	return (
 		<>
 			<Flickity
@@ -35,7 +39,9 @@ const BodySlide = () => {
 					<SlideImage id="3" />
 				</div>
 			</Flickity>
-			<h1>WEB DESIGN, MOBILE APP DEVELOPMENT AND MAINTENANCE</h1>
+			<h1 style={styleTitle}>
+				WEB DESIGN, MOBILE APP DEVELOPMENT AND MAINTENANCE
+			</h1>
 			<p>
 				3FORCOM is an international IT partner. We can start from
 				analyzing your actual business requirements for a web solution

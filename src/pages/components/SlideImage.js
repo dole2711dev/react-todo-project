@@ -34,6 +34,7 @@ const SlideImage = (props) => {
 		},
 	];
 	let { id } = props;
+	// eslint-disable-next-line eqeqeq
 	let dataGrid = dataSlide.find((item) => item.id == id);
 	let { src, title, content, textButton } = dataGrid;
 
